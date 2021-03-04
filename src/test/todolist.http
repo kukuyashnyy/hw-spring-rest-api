@@ -1,5 +1,5 @@
 ## Get all tasks
-GET http://localhost:8080/api/v1/todolist?size=1&page=1&sort=title
+GET http://localhost:8080/api/v1/todolist?size=2&page=2&sort=title
 
 ### Get task by id
 GET http://localhost:8080/api/v1/todolist/1
@@ -9,7 +9,7 @@ POST http://localhost:8080/api/v1/todolist
 Content-Type: application/json
 
   {
-    "title": "aTest task1"
+    "title": "bTest task1"
   }
 
 ### Update task

@@ -41,6 +41,7 @@ public class TaskController {
             }
 
             Page<Task> pageTasks = taskRepository.findAll(pageable);
+            System.out.println(pageTasks.toString());
 
             Map<String, Object> response = new HashMap<>();
             response.put("tasks", pageTasks.getContent());
