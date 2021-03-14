@@ -14,15 +14,15 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/view/" p:suffix=".jsp"/>
 <!--    <mvc:resources mapping="/static/" location="/static/**"/>-->
-<!--    <jdbc:embedded-database id="dataSource" type="H2"/>-->
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <jdbc:embedded-database id="dataSource" type="H2"/>
+<!--    <bean id="dataSource"-->
+<!--          class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
 
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost/tasks" />
-        <property name="username" value="root" />
-        <property name="password" value="" />
-    </bean>
+<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost/tasks" />-->
+<!--        <property name="username" value="root" />-->
+<!--        <property name="password" value="" />-->
+<!--    </bean>-->
     <bean id="jpaVendorAdapter"
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
           p:showSql="true" p:generateDdl="true"/>

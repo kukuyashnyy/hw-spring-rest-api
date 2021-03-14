@@ -19,6 +19,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/todolist")
+@CrossOrigin(origins = "localhost:8080", methods = RequestMethod.POST)
 public class TaskController {
     private final TaskRepository taskRepository;
 
