@@ -30,29 +30,30 @@ public class TaskController {
     public ResponseEntity<?> allTask(@RequestParam(required = false, defaultValue = "20") int size,
                                      @RequestParam(required = false, defaultValue = "1") int page,
                                      @RequestParam(required = false) String sort) {
-        System.out.println("size = " + size + ", page = " + page + ", sort = " + sort);
-
-        try {
-            Pageable pageable;
-            if (sort == null){
-                pageable = PageRequest.of(page, size);
-            } else {
-                pageable = PageRequest.of(page, size, Sort.by(sort));
-            }
-
-            Page<Task> pageTasks = taskRepository.findAll(pageable);
-            System.out.println(pageTasks.toString());
-
-            Map<String, Object> response = new HashMap<>();
-            response.put("tasks", pageTasks.getContent());
-            response.put("currentPage", pageTasks.getNumber());
-            response.put("totalItems", pageTasks.getTotalElements());
-            response.put("totalPages", pageTasks.getTotalPages());
-
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
-        }
+//        System.out.println("size = " + size + ", page = " + page + ", sort = " + sort);
+//
+//        try {
+//            Pageable pageable;
+//            if (sort == null){
+//                pageable = PageRequest.of(page, size);
+//            } else {
+//                pageable = PageRequest.of(page, size, Sort.by(sort));
+//            }
+//
+//            Page<Task> pageTasks = taskRepository.findAll(pageable);
+//            System.out.println(pageTasks.toString());
+//
+//            Map<String, Object> response = new HashMap<>();
+//            response.put("tasks", pageTasks.getContent());
+//            response.put("currentPage", pageTasks.getNumber());
+//            response.put("totalItems", pageTasks.getTotalElements());
+//            response.put("totalPages", pageTasks.getTotalPages());
+//
+//            return ResponseEntity.ok(response);
+//        } catch (Exception e) {
+//            return ResponseEntity.badRequest().build();
+//        }
+        return ResponseEntity.ok(taskRepository.findAll());
     }
 
     @GetMapping(path = "{id}")
